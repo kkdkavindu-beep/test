@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rubik's Cube Solver (Python)</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Rubik's Cube Solver</h1>
+      <p>
+        Enter a scramble (example:
+        <code>R U R' U' F2 D</code>) and this app returns the reverse sequence
+        that solves that scramble.
+      </p>
+
+      <label for="scramble">Scramble moves</label>
+      <textarea
+        id="scramble"
+        rows="4"
+        placeholder="Example: R U R' U' F2 D"
+      ></textarea>
+
+      <button id="solveBtn">Solve Cube</button>
+
+      <section id="result" class="panel hidden">
+        <h2>Solution</h2>
+        <p><strong>Scramble:</strong> <span id="scrambleOut"></span></p>
+        <p><strong>Moves:</strong> <span id="moveCount"></span></p>
+        <p><strong>Algorithm:</strong> <code id="solutionOut"></code></p>
+        <h3>Step-by-step</h3>
+        <ol id="stepsList"></ol>
+      </section>
+
+      <section id="error" class="panel error hidden"></section>
+    </main>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
+</html>
